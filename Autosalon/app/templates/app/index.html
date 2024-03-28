@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+</head>
+<body>
+
+<h1><a href="{% url 'index' %}">Home</a></h1>
+<hr>
+
+<h1>Barcha brandlar </h1>
+
+<hr>
+{% for brand in brands %}
+<ul>
+    <li><a href="{% url 'marka' brand.pk %}">{{ brand }}</a></li>
+</ul>
+{% endfor %}
+<h1>Barcha ranglar</h1>
+<hr>
+{% for color in colors %}
+<ul>
+    <li><a href="{% url 'rang' color.pk %}">{{color}}</a></li>
+</ul>
+{% endfor %}
+<h1>{{ title }}</h1>
+<hr>
+{% for car in cars %}
+
+<ul>
+    <b><li><p>Nomi:{{ car.car_name}}</p></li></b>
+    <li><p>Boshqaruvi:{{ car.role}}</p></li>
+    <li><p>Narhi:{{ car.price}}</p></li>
+    <li><p>Rangi:{{ car.color}}</p></li>
+    <li><p>Yuklangan vaqti:{{ car.created}}</p></li><hr>
+</ul>
+{% endfor %}
+
+</body>
+</html>
